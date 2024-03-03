@@ -5,8 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EmploymentManagement"
         mc:Ignorable="d"
+        Background="Transparent"
+        AllowsTransparency="True"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
 
-    </Grid>
+    <Border CornerRadius="50"
+            Background="#00797A"
+            BorderBrush="MediumAquamarine"
+            BorderThickness="5">
+        
+    </Border>
 </Window>
