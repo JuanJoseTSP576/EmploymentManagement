@@ -4,15 +4,30 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EmploymentManagement.View"
+        xmlns:viewModel="clr-namespace:EmploymentManagement.ViewModels"
         mc:Ignorable="d"
         WindowStyle="None"
         Title="LoginView" Height="450" Width="800"
         ResizeMode="NoResize"
                Background="Transparent"
-       AllowsTransparency="True"
+       AllowsTransparency="True" 
         WindowStartupLocation="CenterScreen"
-        MouseDown="Window_MouseDown"
-        >
+        MouseDown="Window_MouseDown">
+
+    <Window.DataContext>
+        <EmploymentManagement:LoginViewModel/>
+    </Window.DataContext>
+
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibility"/>
+    </Window.Resources>
+
+    <Window.Visibility>
+        <Binding Path="IsViewVisible" Mode="TwoWay" Converter="{StaticResource BooleanToVisibility}"/>
+    </Window.Visibility>
+
+
+
     <Border CornerRadius="20">
         <Border.Background>
             <ImageBrush ImageSource="C:\Users\juanj\Downloads\EmploymentManagement\Images\employmentbackground.jpg" Stretch="None"/>
@@ -65,7 +80,7 @@
                            FontFamily="Montserrat"
                            Grid.Column="0"
                            VerticalAlignment="Top"
-                           Margin="5,0,5,0"/>
+                           Margin="5,7,5,0"/>
 
                     <Button x:Name="btnMinimize"
                             Background="#28AEED"
@@ -237,7 +252,7 @@
                                 <Setter Property="Background" Value="#009DC7"/>
                                 <Style.Triggers>
                                     <Trigger Property="IsMouseCaptured" Value="true">
-                                        <Setter Property="Background" Value="#000000"/>
+                                        <Setter Property="Background" Value="#007D9F"/>
                                     </Trigger>
                                 </Style.Triggers>
 
